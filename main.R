@@ -1,24 +1,20 @@
 rm(list = ls())
 
-library(stringr)
-library(stringi)
-
-
 #met_zone <- read.csv('met_postaje.csv', header = TRUE)
 
-website_data <- read.csv("http://meteo.hr/naslovnica_aktpod.php?tab=aktpod", header=FALSE, skip=910)
+library(stringr)
+library(rvest)
+library(dplyr)
 
-measure_date <- stri_sub(str_replace_all(website_data[8:8,], fixed(" "), ""), 24, 33)
-measure_hour <- stri_sub(str_replace_all(website_data[8:8,], fixed(" "), ""), 35, 36)
+link = 'http://meteo.hr/naslovnica_aktpod.php?tab=aktpod'
+website = read_html(link)
 
-tmp_postaja_name <- stri_sub(str_replace_all(website_data[32:32,], fixed(" "), ""), 32)
-tmp_postaja_temp <- stri_sub(str_replace_all(website_data[38:38,], fixed(" "), ""), 5, 7)
+date_time = website %>% html_nodes(".hours-browser__title span") %>% html_text()
 
-tmp_postaja_name2 <- stri_sub(str_replace_all(website_data[56:56,], fixed(" "), ""), 32)
-tmp_postaja_temp2 <- stri_sub(str_replace_all(website_data[62:62,], fixed(" "), ""), 5, 8)
-  
-tmp_postaje <- c(tmp_postaja_name, tmp_postaja_name2)
-tmp_temp <- c(tmp_postaja_temp, tmp_postaja_temp2)
-  
-rezultati <- data.frame(postaje = tmp_postaje, 
-                        temperatura = tmp_temp)
+met_zone = website %>% html_nodes("#table-aktualni-podaci td.fd-u-text-align--left") %>% html_text() 
+
+met_zone =  str_replace_all(gsub("[\r\n]", "", met_zone), fixed(" "), "")
+
+temp = website %>% html_nodes("td:nth-child(4)") %>% html_text()
+
+results = data.frame(met_zone, temp, stringsAsFactors = FALSE)
