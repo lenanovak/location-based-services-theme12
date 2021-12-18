@@ -1,0 +1,17 @@
+Tjedan 1 (13.-19.12.2021.)
+- otvoriti repozitorij za projekt na platformi GitHub (LN)
+- napraviti inicijalnu R skriptu kroz koju će se implementirati rješenje zadatka (LN)
+- napraviti inicijalni dokument završnog izvješća koje će se predati na kraju projekta (LN)
+- proučiti dhmz stranicu i pronaći način zapisivanja podataka sa web stranice u R skriptu (LN)
+
+
+Tjedan 2 (20.-26.12.2021.)
+- implementirati prikaz geografske karte Hrvatske i svih mjernih zona 
+- spojiti podatke o temperaturi i mjernim zonama sa geografskom kartom
+- proučiti procjenu Moranogov I indeksa 
+- implementirati Moran I i Monte Carlo simulaciju
+
+Tjedan 3 (27.12.2021.-02.01.2022.)
+- prikazati definiciju Moran I indeksa
+- obrazložiti postupak i rezultate testa u završni izvještaj
+- interpretirati i komentirati dobivene vrijednosti procjene u završni izvještaj
