@@ -1,44 +1,44 @@
-﻿Postaja,Lat,Lon
-Zagreb-Maksimir,45.81879,16.01297
-Zagreb-Grič,45.81491,15.97196
-Puntijarka (Medvednica),45.80529,15.93068
-Krapina,,
-Varaždin,,
-Križevci,,
-Bilogora,,
-Daruvar,,
-Bjelovar,,
-Sisak,,
-Gorice (kod Nove Gradiške),,
-Kutjevo,,
-Slavonski Brod,,
-Osijek-Čepin,,
-Gradište,,
-Karlovac,,
-Ogulin,,
-NP Plitvička jezera,,
-Gospić,,
-Parg-Čabar,,
-Pazin,,
-Pula-aerodrom,,
-Porer,,
-Sv. Ivan na pučini,,
-Opatija,,
-Rijeka,,
-Crikvenica,,
-Senj,,
-Zavižan,,
-Rab,,
-Mali Lošinj,,
-Zadar,,
-Veli Rat,,
-Knin,,
-Šibenik,,
-Split-Marjan,,
-Makarska,,
-Hvar,,
-Ploče,,
-Dubrovnik,,
-Gruda,,
-Prevlaka,,
-Lastovo,,
+﻿postaja,lat,lon
+Zagreb-Maksimir,45.819872,16.015356
+Zagreb-Grič,45.81452,15.972231
+Puntijarka(Medvednica),45.916651,15.968088
+Krapina,46.159759,15.873718
+Varaždin,46.308901,16.334599
+Križevci,46.022829,16.547252
+Bilogora,45.88297,17.121566
+Daruvar,45.592217,17.224925
+Bjelovar,45.897555,16.844719
+Sisak,45.483532,16.374372
+Gorice(kodNoveGradiške),45.251623,17.383843
+Kutjevo,45.424757,17.883743
+Slavonski Brod,45.157895,18.013083
+Osijek-Čepin,45.542539,18.648602
+Gradište,45.14513,18.708709
+Karlovac,45.489022,15.552722
+Ogulin,45.26526,15.226833
+NPPlitvičkajezera,44.881663,15.620377
+Gospić,44.544965,15.378327
+Parg-Čabar,45.595448,14.625159
+Pazin,45.239373,13.934667
+Pula-aerodrom,44.899986,13.930831
+Porer,45.226165,13.596991
+Sv.Ivannapučini,45.043013,13.614036
+Opatija,45.349754,14.320465
+Rijeka,45.327343,14.440171
+Crikvenica,45.171712,14.692679
+Senj,44.98525,14.904001
+Zavižan,44.799756,14.967379
+Rab,44.779838,14.755501
+Mali Lošinj,44.526671,14.475415
+Zadar,44.109412,15.235794
+VeliRat,44.139509,14.84915
+Knin,44.041393,16.20382
+Šibenik,43.717501,15.905962
+Split-Marjan,43.51232,16.417406
+Makarska,43.295584,17.01614
+Hvar,43.154962,16.659575
+Ploče,43.051212,17.434644
+Dubrovnik,42.646564,18.083455
+Gruda,42.516727,18.374692
+Prevlaka,42.399624,18.518573
+Lastovo,42.748113,16.889897
