@@ -1,11 +1,13 @@
 rm(list = ls())
 
-met_zone1 <- read.csv('met_postaje.csv', header = TRUE)
+#met_zone <- read.csv('met_postaje.csv', header = TRUE)
 
-library(stringr)
+library(spdep)
+library(leaflet)
+library(sf)
 library(rvest)
 library(dplyr)
-library(rworldmap)
+library(stringr)
 
 link = 'http://meteo.hr/naslovnica_aktpod.php?tab=aktpod'
 website = read_html(link)
@@ -20,7 +22,32 @@ temp = website %>% html_nodes("td:nth-child(4)") %>% html_text()
 
 results = data.frame(met_zone, temp, stringsAsFactors = FALSE)
 
-newmap <- getMap(resolution="low")
+results = results[!duplicated(results),]
 
-plot(newmap, xlim = c(16.5, 16.5), ylim = c(42.5, 46.5), asp = 1)
-points(met_zone1$lon, met_zone1$lat, col = "red", cex = .6)
+lonlat = read.csv(file='met_postaje.csv', header=TRUE, encoding="UTF-8")
+
+names(lonlat)[names(lonlat) == 'X.U.FEFF.postaja'] = 'met_zone'
+
+results = merge(results, lonlat, by='met_zone')
+
+k <- knearneigh(coordinates(cbind(results$lon, results$lat)), longlat = TRUE)
+
+nb <- knn2nb(k)
+print(nb)
+
+colW <- nb2listw(nb)
+print(nb2listw(nb))
+
+moran(as.numeric(results$temp), nb2listw(nb), length(nb), Szero(nb2listw(nb)))
+
+moran.mc(as.numeric(results$temp), nb2listw(nb), nsim=99)
+
+hist(as.numeric(results$temp), main=NULL)
+boxplot(as.numeric(results$temp), horizontal = TRUE)
+
+print_data = paste(results$met_zone, results$temp)
+
+map.point <- leaflet() %>%
+  addTiles() %>%
+  addCircleMarkers(lng=results$lon, lat=results$lat, clusterOptions = markerClusterOptions(), label = print_data)
+map.point
