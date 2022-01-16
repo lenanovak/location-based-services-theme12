@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Rezultati 16.1.2022.
 
 
-```{r }
+```{r, warning=FALSE, error=FALSE, message=FALSE}
 rm(list = ls())
 
 #met_zone <- read.csv('met_postaje.csv', header = TRUE)
